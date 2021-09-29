@@ -1,6 +1,7 @@
-from openjudgeCrawler.crawler import zzuiloj
-from openjudgeCrawler.crawler import nowcoder
-from openjudgeCrawler.crawler import codeforces
+from crawler import zzuiloj
+from crawler import nowcoder
+from crawler import codeforces
+from crawler import fuquanoj
 
 
 def get_zzulioj_solve(uid):
@@ -17,3 +18,7 @@ def get_codeforces_solve(uid):
 
 def get_codeforces_rating(uid):
     return codeforces.get_rating(uid)
+
+
+def get_fuquan_solve(uid):
+    return fuquanoj.get_solve_num(uid)

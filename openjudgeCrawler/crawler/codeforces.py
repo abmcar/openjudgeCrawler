@@ -22,16 +22,17 @@ def parse_result(html):
 
 
 def parse_rating(html):
-    pattern = re.compile('<span style="font-weight:bold;" class="user-blue">(.*?)</span> <span class="smaller"> \(max.',
+    pattern = re.compile('<span style="font-weight:bold;" class=(.*?)>(.*?)</span> <span class="smaller"> \(max.',
                          re.S)
     items = re.findall(pattern, html)
     # print(items)
-    return items[0]
+    return items[0][1]
 
 
 def get_solve_num(uid):
     url = 'https://codeforces.com/profile/' + uid
     html = request_dandan(url)
+    # print(requests.get(url).text)
     items = parse_result(html)  # 解析过滤我们想要的信息
     return int(items)
 
@@ -39,6 +40,7 @@ def get_solve_num(uid):
 def get_rating(uid):
     url = 'https://codeforces.com/profile/' + uid
     html = request_dandan(url)
+    # print(requests.get(url).text)
     items = parse_rating(html)  # 解析过滤我们想要的信息
     return int(items)
 

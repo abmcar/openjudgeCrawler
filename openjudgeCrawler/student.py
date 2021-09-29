@@ -1,4 +1,4 @@
-from openjudgeCrawler.util import crawlerUtil
+from util import crawlerUtil
 
 
 class Student:
@@ -12,6 +12,8 @@ class Student:
         self.solve_codeforces = 0
         self.rating_codeforces = 0
         self.name_codeforces = None
+        self.solve_fuquan = 0
+        self.name_fuquan = None
         self.sno = sno
         self.name = name
         self.tot_solve = 0
@@ -32,8 +34,12 @@ class Student:
         if self.name_zzulioj is not None:
             self.rating_codeforces = crawlerUtil.get_codeforces_rating(self.name_codeforces)
 
+    def set_solve_fuquan(self):
+        if self.name_fuquan is not None:
+            self.solve_fuquan = crawlerUtil.get_fuquan_solve(self.name_fuquan)
+
     def get_tot_solve(self):
-        self.tot_solve = self.solve_zzulioj + self.solve_nyoj + self.solve_nowcoder + self.solve_codeforces
+        self.tot_solve = self.solve_zzulioj + self.solve_nyoj + self.solve_nowcoder + self.solve_codeforces + self.solve_fuquan
 
 
 def test():

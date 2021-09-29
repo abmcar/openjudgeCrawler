@@ -1,5 +1,14 @@
 import pymysql
 import student
+import json
+
+now_json = {
+    "code": 0,
+    "msg": "",
+    "count": 30,
+    "data": [
+    ]
+}
 
 if __name__ == '__main__':
     db = pymysql.connect(host="db.abmcar.top", port=10019, user="nyist", password="password=NULL0",
@@ -43,6 +52,14 @@ if __name__ == '__main__':
         cursor.execute(sql_update)
         db.commit()
 
+        nowStudent.name_fuquan = row[12]
+        # nowStudent.set_solve_fuquan()
+        sql_update = 'update ranking set solve_fuquan=\'' + str(nowStudent.solve_fuquan) + '\' where sno=\'' + str(
+            nowStudent.sno) + '\''
+        print(sql_update)
+        cursor.execute(sql_update)
+        db.commit()
+
         nowStudent.get_tot_solve()
         sql_update = 'update ranking set totSolve=\'' + str(nowStudent.tot_solve) + '\' where sno=\'' + str(
             nowStudent.sno) + '\''
@@ -50,9 +67,20 @@ if __name__ == '__main__':
         cursor.execute(sql_update)
         db.commit()
 
+        now_json["data"].append({
+            "sno": nowStudent.sno
+            ,"name": nowStudent.name
+            ,"solve_zzulioj": nowStudent.solve_zzulioj
+            ,"solve_codeforces": nowStudent.solve_codeforces
+            ,"rating_codeforces": nowStudent.rating_codeforces
+            ,"solve_nowcoder": nowStudent.solve_nowcoder
+            ,"solve_nyoj": nowStudent.solve_nyoj
+            ,"solve_fuquanoj": nowStudent.solve_fuquan
+        })
         # nowStudent.solve_zzulioj = zzuiloj.get_solve_num('abmcar')
         studentList.append(nowStudent)
+        print (json.dumps(now_json, sort_keys=True, indent=2))
         # print(studentList[len(studentList) - 1].tot_solve)
         # print(studentList[len(studentList) - 1].rating_codeforces)
-
-# 访问 https://www.jetbrains.com/help/pycharm/ 获取 PyCharm 帮助
+    f = open(file="test.json", mode='w')
+    f.write(json.dumps(now_json, sort_keys=True, indent=2))
