@@ -6,7 +6,7 @@ import http.cookiejar as cookielib
 from requests.cookies import cookiejar_from_dict
 
 headers = {
-    'GET' : '/userinfo/abmcar HTTP/1.1',
+    'GET': '/userinfo/abmcar HTTP/1.1',
     'Host': 'nyoj.online',
     'Connection': 'keep-alive',
     'Cache-Control': 'max-age=0',
@@ -26,12 +26,12 @@ headers = {
 
 }
 
-
 nowcookies = {
     'UM_distinctid': '17c16d07e19d1d-0dd6ef3425ab05-57341f44-1fa400-17c16d07e1a41a',
-    'PHPSESSID' : 'nq21coce16oe59kgrp3plc3dk3',
-    'CNZZDATA1273689806' : '1979339911-1632470151-%7C1632874968'
+    'PHPSESSID': 'nq21coce16oe59kgrp3plc3dk3',
+    'CNZZDATA1273689806': '1979339911-1632470151-%7C1632874968'
 }
+
 
 def request_dandan(url):
     try:
