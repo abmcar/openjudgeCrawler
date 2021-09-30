@@ -17,6 +17,10 @@ class Student:
         self.sno = sno
         self.name = name
         self.tot_solve = 0
+        self.solve_luogu = 0
+        self.name_luogu = None
+        self.solve_vjudge = 0
+        self.name_vjudge = None
 
     def set_solve_zzulioj(self):
         if self.name_zzulioj is not None:
@@ -38,8 +42,17 @@ class Student:
         if self.name_fuquan is not None:
             self.solve_fuquan = crawlerUtil.get_fuquan_solve(self.name_fuquan)
 
+    def set_solve_luogu(self):
+        if self.name_luogu is not None:
+            self.solve_luogu = crawlerUtil.get_luogu_solve(self.name_luogu)
+
+    def set_solve_vjudge(self):
+        if self.name_vjudge is not None:
+            self.solve_vjudge = crawlerUtil.get_vjudge_solve(self.name_vjudge)
+
+
     def get_tot_solve(self):
-        self.tot_solve = self.solve_zzulioj + self.solve_nyoj + self.solve_nowcoder + self.solve_codeforces + self.solve_fuquan
+        self.tot_solve = self.solve_zzulioj + self.solve_nyoj + self.solve_nowcoder + self.solve_codeforces + self.solve_fuquan + self.solve_luogu + self.solve_vjudge
 
 
 def test():

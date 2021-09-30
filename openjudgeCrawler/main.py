@@ -60,6 +60,22 @@ if __name__ == '__main__':
         cursor.execute(sql_update)
         db.commit()
 
+        nowStudent.name_vjudge = row[15]
+        nowStudent.set_solve_vjudge()
+        sql_update = 'update ranking set solve_vjudge=\'' + str(nowStudent.solve_vjudge) + '\' where sno=\'' + str(
+            nowStudent.sno) + '\''
+        print(sql_update)
+        cursor.execute(sql_update)
+        db.commit()
+
+        nowStudent.name_luogu = row[16]
+        nowStudent.set_solve_luogu()
+        sql_update = 'update ranking set solve_luogu=\'' + str(nowStudent.solve_luogu) + '\' where sno=\'' + str(
+            nowStudent.sno) + '\''
+        print(sql_update)
+        cursor.execute(sql_update)
+        db.commit()
+
         nowStudent.get_tot_solve()
         sql_update = 'update ranking set totSolve=\'' + str(nowStudent.tot_solve) + '\' where sno=\'' + str(
             nowStudent.sno) + '\''
@@ -76,6 +92,9 @@ if __name__ == '__main__':
             ,"solve_nowcoder": nowStudent.solve_nowcoder
             ,"solve_nyoj": nowStudent.solve_nyoj
             ,"solve_fuquanoj": nowStudent.solve_fuquan
+            ,"solve_luogu": nowStudent.solve_luogu
+            ,"solve_vjudge": nowStudent.solve_vjudge
+            ,"totSolve": nowStudent.tot_solve
             ,"fakeName": row[14]
         })
         # nowStudent.solve_zzulioj = zzuiloj.get_solve_num('abmcar')
