@@ -14,10 +14,14 @@ def request_dandan(url):
 
 
 def parse_result(html):
+    if html is None:
+        return 0
     # pattern = re.compile('<tr ><td>解决<td align=center><a href=.*?>(.*?)</a>', re.S)
     pattern = re.compile('通过 (.*?) 题', re.S)
     items = re.findall(pattern, html)
     # print(items)
+    if len(items) == 0:
+        return 0
     return items[0]
 
 

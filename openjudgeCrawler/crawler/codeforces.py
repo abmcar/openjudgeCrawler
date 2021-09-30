@@ -14,18 +14,26 @@ def request_dandan(url):
 
 
 def parse_result(html):
+    if html is None:
+        return 0
     # pattern = re.compile('<tr ><td>解决<td align=center><a href=.*?>(.*?)</a>', re.S)
     pattern = re.compile('<div class="_UserActivityFrame_counterValue">(.*?) problems</div>', re.S)
     items = re.findall(pattern, html)
     # print(items)
+    if len(items) == 0:
+        return 0
     return items[0]
 
 
 def parse_rating(html):
+    if html is None:
+        return 0
     pattern = re.compile('<span style="font-weight:bold;" class=(.*?)>(.*?)</span> <span class="smaller"> \(max.',
                          re.S)
     items = re.findall(pattern, html)
     # print(items)
+    if len(items) == 0:
+        return 0
     return items[0][1]
 
 

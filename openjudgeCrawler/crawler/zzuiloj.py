@@ -13,9 +13,13 @@ def request_dandan(url):
 
 
 def parse_result(html):
-    pattern = re.compile('<tr ><td>解决<td align=center><a href=.*?>(.*?)</a>', re.S)
+    if html is None:
+        return 0
+    pattern = re.compile('<tr ><td>解决<td align=center><a href=(.*?)>(.*?)</a>', re.S)
     items = re.findall(pattern, html)
     # print(items)
+    if len(items) == 0:
+        return 0
     return items[0]
 
 
@@ -31,8 +35,10 @@ def get_solve_num(uid):
     url = 'http://acm.zzuli.edu.cn/userinfo.php?user=' + uid
     html = request_dandan(url)
     items = parse_result(html)  # 解析过滤我们想要的信息
-    # print(items)
-    return int(items)
+    if items == 0:
+        return 0
+    print(items[1])
+    return int(items[1])
 
 # if __name__ == "__main__":
 #     x = ['2015045064', '2015045055--MH', '2015185075', '2015045054', '2015185065', '2015185072', '2015045012',

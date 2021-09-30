@@ -15,10 +15,14 @@ def request_dandan(url):
 
 def parse_result(html):
     # pattern = re.compile('<tr ><td>解决<td align=center><a href=.*?>(.*?)</a>', re.S)
+    if html is None:
+        return 0
     pattern = re.compile(
         '题已挑战</span>\n</div>\n<div class="my-state-item">\n<div class="state-num">(.*?)</div>\n<span>题已通过</span>', re.S)
     items = re.findall(pattern, html)
     # print(items)
+    if len(items) == 0:
+        return 0
     return items[0]
 
 

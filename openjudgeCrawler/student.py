@@ -31,7 +31,7 @@ class Student:
             self.solve_codeforces = crawlerUtil.get_codeforces_solve(self.name_codeforces)
 
     def set_rating_codeforces(self):
-        if self.name_zzulioj is not None:
+        if self.name_codeforces is not None:
             self.rating_codeforces = crawlerUtil.get_codeforces_rating(self.name_codeforces)
 
     def set_solve_fuquan(self):

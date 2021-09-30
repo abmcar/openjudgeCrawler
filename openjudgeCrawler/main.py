@@ -63,7 +63,7 @@ if __name__ == '__main__':
         nowStudent.get_tot_solve()
         sql_update = 'update ranking set totSolve=\'' + str(nowStudent.tot_solve) + '\' where sno=\'' + str(
             nowStudent.sno) + '\''
-        print(sql_update)
+        # print(sql_UPupdate)
         cursor.execute(sql_update)
         db.commit()
 
@@ -76,11 +76,12 @@ if __name__ == '__main__':
             ,"solve_nowcoder": nowStudent.solve_nowcoder
             ,"solve_nyoj": nowStudent.solve_nyoj
             ,"solve_fuquanoj": nowStudent.solve_fuquan
+            ,"fakeName": row[14]
         })
         # nowStudent.solve_zzulioj = zzuiloj.get_solve_num('abmcar')
         studentList.append(nowStudent)
         print (json.dumps(now_json, sort_keys=True, indent=2))
         # print(studentList[len(studentList) - 1].tot_solve)
         # print(studentList[len(studentList) - 1].rating_codeforces)
-    f = open(file="test.json", mode='w')
+    f = open(file="data.json", mode='w')
     f.write(json.dumps(now_json, sort_keys=True, indent=2))
