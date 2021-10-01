@@ -17,7 +17,7 @@ def parse_result(html):
     if html is None:
         return 0
     # pattern = re.compile('<tr ><td>解决<td align=center><a href=.*?>(.*?)</a>', re.S)
-    pattern = re.compile('<table class="layui-table" id="(.*?)">', re.S)
+    pattern = re.compile('</td>\n                                <td>.*?</td>\n                            </tr>\n                                                    </tbody>', re.S)
     items = re.findall(pattern, html)
     print(items)
     if len(items) == 0:
