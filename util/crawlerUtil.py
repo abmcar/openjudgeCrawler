@@ -2,6 +2,7 @@ from crawler import zzuiloj
 from crawler import nowcoder
 from crawler import codeforces
 from crawler import fuquanoj
+from crawler import nyoj
 from crawler import luogu
 from crawler import vjudge
 
@@ -20,6 +21,10 @@ def get_codeforces_solve(uid):
 
 def get_codeforces_rating(uid):
     return codeforces.get_rating(uid)
+
+
+def get_nyoj_solve(uid):
+    return nyoj.get_solve_num(uid)
 
 
 def get_fuquan_solve(uid):

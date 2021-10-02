@@ -52,6 +52,14 @@ if __name__ == '__main__':
         cursor.execute(sql_update)
         db.commit()
 
+        nowStudent.name_nyoj = row[8]
+        nowStudent.set_solve_nyoj()
+        sql_update = 'update ranking set solve_nyoj=\'' + str(nowStudent.solve_nyoj) + '\' where sno=\'' + str(
+            nowStudent.sno) + '\''
+        print(sql_update)
+        cursor.execute(sql_update)
+        db.commit()
+
         nowStudent.name_fuquan = row[12]
         # nowStudent.set_solve_fuquan()
         sql_update = 'update ranking set solve_fuquan=\'' + str(nowStudent.solve_fuquan) + '\' where sno=\'' + str(

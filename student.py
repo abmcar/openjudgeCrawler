@@ -38,6 +38,10 @@ class Student:
         if self.name_codeforces is not None:
             self.rating_codeforces = crawlerUtil.get_codeforces_rating(self.name_codeforces)
 
+    def set_solve_nyoj(self):
+        if self.name_nyoj is not None:
+            self.solve_nyoj = crawlerUtil.get_nyoj_solve(self.name_nyoj)
+
     def set_solve_fuquan(self):
         if self.name_fuquan is not None:
             self.solve_fuquan = crawlerUtil.get_fuquan_solve(self.name_fuquan)

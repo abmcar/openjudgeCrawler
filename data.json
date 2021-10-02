@@ -1,6 +1,6 @@
 {
   "code": 0,
-  "count": 30,
+  "count": 300,
   "data": [
     {
       "fakeName": null,
@@ -39,10 +39,10 @@
       "solve_fuquanoj": 0,
       "solve_luogu": 167,
       "solve_nowcoder": 418,
-      "solve_nyoj": 0,
+      "solve_nyoj": 12,
       "solve_vjudge": 814,
       "solve_zzulioj": 24,
-      "totSolve": 1577
+      "totSolve": 1589
     },
     {
       "fakeName": "rainbow",
