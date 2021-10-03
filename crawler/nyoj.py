@@ -25,7 +25,8 @@ def parse_result(html):
         return 0
     # <tbody>.*?<tr>.*?<td>.*?</td>.*?<td>.*?</td>.*?<td style="max-width: 200px;">.*?</td>.*?<td>(.*?)</td>.*?</tr>.*?</tbody>
     # pattern = re.compile('<tr ><td>解决<td align=center><a href=.*?>(.*?)</a>', re.S)
-    pattern = re.compile('<tbody>.*?<tr>.*?<td>.*?</td>.*?<td>.*?</td>.*?<td style="max-width: 200px;">.*?</td>.*?<td>(.*?)</td>.*?</tr>.*?</tbody>', re.S)
+    pattern = re.compile('<tbody>.*?<tr>.*?<td>.*?</td>.*?<td>.*?</td>.*?<td style="max-width: '
+                         '200px;">.*?</td>.*?<td>(.*?)</td>.*?</tr>.*?</tbody>', re.S)
     items = re.findall(pattern, html)
     # print(items)
     # print()

@@ -40,9 +40,9 @@
       "solve_luogu": 167,
       "solve_nowcoder": 418,
       "solve_nyoj": 12,
-      "solve_vjudge": 814,
+      "solve_vjudge": 816,
       "solve_zzulioj": 24,
-      "totSolve": 1589
+      "totSolve": 1591
     },
     {
       "fakeName": "rainbow",
@@ -95,10 +95,10 @@
       "solve_fuquanoj": 0,
       "solve_luogu": 368,
       "solve_nowcoder": 86,
-      "solve_nyoj": 0,
+      "solve_nyoj": 8,
       "solve_vjudge": 238,
       "solve_zzulioj": 13,
-      "totSolve": 817
+      "totSolve": 825
     }
   ],
   "msg": ""

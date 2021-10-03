@@ -34,5 +34,6 @@ def get_fuquan_solve(uid):
 def get_luogu_solve(uid):
     return luogu.get_solve_num(uid)
 
+
 def get_vjudge_solve(uid):
     return vjudge.get_solve_num(uid)

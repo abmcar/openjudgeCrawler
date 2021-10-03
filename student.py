@@ -54,7 +54,6 @@ class Student:
         if self.name_vjudge is not None:
             self.solve_vjudge = crawlerUtil.get_vjudge_solve(self.name_vjudge)
 
-
     def get_tot_solve(self):
         self.tot_solve = self.solve_zzulioj + self.solve_nyoj + self.solve_nowcoder + self.solve_codeforces + self.solve_fuquan + self.solve_luogu + self.solve_vjudge
 

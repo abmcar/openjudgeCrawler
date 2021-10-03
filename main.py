@@ -87,7 +87,7 @@ if __name__ == '__main__':
         nowStudent.get_tot_solve()
         sql_update = 'update ranking set totSolve=\'' + str(nowStudent.tot_solve) + '\' where sno=\'' + str(
             nowStudent.sno) + '\''
-        # print(sql_UPupdate)
+        print(sql_update)
         cursor.execute(sql_update)
         db.commit()
 
