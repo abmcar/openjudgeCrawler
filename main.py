@@ -84,6 +84,14 @@ if __name__ == '__main__':
         cursor.execute(sql_update)
         db.commit()
 
+        nowStudent.name_jzoj = row[19]
+        nowStudent.set_solve_jzoj()
+        sql_update = 'update ranking set solve_jzoj=\'' + str(nowStudent.solve_jzoj) + '\' where sno=\'' + str(
+            nowStudent.sno) + '\''
+        print(sql_update)
+        cursor.execute(sql_update)
+        db.commit()
+
         nowStudent.get_tot_solve()
         sql_update = 'update ranking set totSolve=\'' + str(nowStudent.tot_solve) + '\' where sno=\'' + str(
             nowStudent.sno) + '\''
@@ -102,6 +110,7 @@ if __name__ == '__main__':
             ,"solve_fuquanoj": nowStudent.solve_fuquan
             ,"solve_luogu": nowStudent.solve_luogu
             ,"solve_vjudge": nowStudent.solve_vjudge
+            ,"solve_jzoj": nowStudent.solve_jzoj
             ,"totSolve": nowStudent.tot_solve
             ,"fakeName": row[14]
         })

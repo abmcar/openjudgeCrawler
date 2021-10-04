@@ -9,6 +9,7 @@
       "sno": 11,
       "solve_codeforces": 0,
       "solve_fuquanoj": 0,
+      "solve_jzoj": 0,
       "solve_luogu": 0,
       "solve_nowcoder": 0,
       "solve_nyoj": 0,
@@ -23,6 +24,7 @@
       "sno": 123,
       "solve_codeforces": 0,
       "solve_fuquanoj": 0,
+      "solve_jzoj": 0,
       "solve_luogu": 0,
       "solve_nowcoder": 0,
       "solve_nyoj": 0,
@@ -33,16 +35,17 @@
     {
       "fakeName": "hesorchen",
       "name": "???",
-      "rating_codeforces": 1829,
+      "rating_codeforces": 1826,
       "sno": 1906915007,
-      "solve_codeforces": 154,
+      "solve_codeforces": 157,
       "solve_fuquanoj": 0,
+      "solve_jzoj": 0,
       "solve_luogu": 167,
       "solve_nowcoder": 418,
       "solve_nyoj": 12,
       "solve_vjudge": 816,
       "solve_zzulioj": 24,
-      "totSolve": 1591
+      "totSolve": 1594
     },
     {
       "fakeName": "rainbow",
@@ -51,6 +54,7 @@
       "sno": 1906915008,
       "solve_codeforces": 373,
       "solve_fuquanoj": 0,
+      "solve_jzoj": 0,
       "solve_luogu": 74,
       "solve_nowcoder": 101,
       "solve_nyoj": 0,
@@ -61,16 +65,17 @@
     {
       "fakeName": "lrb666",
       "name": "???",
-      "rating_codeforces": 1546,
+      "rating_codeforces": 1630,
       "sno": 2015105337,
-      "solve_codeforces": 219,
+      "solve_codeforces": 222,
       "solve_fuquanoj": 0,
+      "solve_jzoj": 0,
       "solve_luogu": 0,
       "solve_nowcoder": 0,
       "solve_nyoj": 0,
       "solve_vjudge": 219,
       "solve_zzulioj": 0,
-      "totSolve": 438
+      "totSolve": 441
     },
     {
       "fakeName": "Emisaka",
@@ -79,26 +84,28 @@
       "sno": 2015105600,
       "solve_codeforces": 44,
       "solve_fuquanoj": 0,
+      "solve_jzoj": 0,
       "solve_luogu": 158,
       "solve_nowcoder": 22,
       "solve_nyoj": 0,
-      "solve_vjudge": 258,
+      "solve_vjudge": 264,
       "solve_zzulioj": 100,
-      "totSolve": 582
+      "totSolve": 588
     },
     {
       "fakeName": "abmcar",
       "name": "abmcar",
-      "rating_codeforces": 1600,
+      "rating_codeforces": 1504,
       "sno": 2015105601,
-      "solve_codeforces": 112,
+      "solve_codeforces": 116,
       "solve_fuquanoj": 0,
+      "solve_jzoj": 2,
       "solve_luogu": 368,
       "solve_nowcoder": 86,
       "solve_nyoj": 8,
-      "solve_vjudge": 238,
+      "solve_vjudge": 246,
       "solve_zzulioj": 13,
-      "totSolve": 825
+      "totSolve": 839
     }
   ],
   "msg": ""

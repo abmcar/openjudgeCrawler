@@ -21,6 +21,8 @@ class Student:
         self.name_luogu = None
         self.solve_vjudge = 0
         self.name_vjudge = None
+        self.name_jzoj = None
+        self.solve_jzoj = 0
 
     def set_solve_zzulioj(self):
         if self.name_zzulioj is not None:
@@ -54,8 +56,12 @@ class Student:
         if self.name_vjudge is not None:
             self.solve_vjudge = crawlerUtil.get_vjudge_solve(self.name_vjudge)
 
+    def set_solve_jzoj(self):
+        if self.name_jzoj is not None:
+            self.solve_jzoj = crawlerUtil.get_jzoj_solve(self.name_jzoj)
+
     def get_tot_solve(self):
-        self.tot_solve = self.solve_zzulioj + self.solve_nyoj + self.solve_nowcoder + self.solve_codeforces + self.solve_fuquan + self.solve_luogu + self.solve_vjudge
+        self.tot_solve = self.solve_zzulioj + self.solve_nyoj + self.solve_nowcoder + self.solve_codeforces + self.solve_fuquan + self.solve_luogu + self.solve_vjudge + self.solve_jzoj
 
 
 def test():
