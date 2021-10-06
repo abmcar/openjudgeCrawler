@@ -23,6 +23,7 @@ class Student:
         self.name_vjudge = None
         self.name_jzoj = None
         self.solve_jzoj = 0
+        self.extra_codeforces = 0
 
     def set_solve_zzulioj(self):
         if self.name_zzulioj is not None:
@@ -62,6 +63,20 @@ class Student:
 
     def get_tot_solve(self):
         self.tot_solve = self.solve_zzulioj + self.solve_nyoj + self.solve_nowcoder + self.solve_codeforces + self.solve_fuquan + self.solve_luogu + self.solve_vjudge + self.solve_jzoj
+
+    def get_extra_codeforces(self):
+        nowRating = self.rating_codeforces
+        if nowRating >= 300:
+            self.extra_codeforces = 5
+        if nowRating >= 500:
+            self.extra_codeforces = 10
+        if nowRating >= 700:
+            self.extra_codeforces = 25
+        if nowRating >= 800:
+            self.extra_codeforces = 50
+        if nowRating >= 950:
+            self.extra_codeforces = 100
+
 
 
 def test():

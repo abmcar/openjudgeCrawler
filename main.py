@@ -99,25 +99,31 @@ if __name__ == '__main__':
         cursor.execute(sql_update)
         db.commit()
 
+        nowStudent.get_extra_codeforces()
+        sql_update = 'update ranking set extra_codeforces=\'' + str(
+            nowStudent.extra_codeforces) + '\' where sno=\'' + str(
+            nowStudent.sno) + '\''
+        print(sql_update)
+        cursor.execute(sql_update)
+        db.commit()
+
         now_json["data"].append({
             "sno": nowStudent.sno
-            ,"name": nowStudent.name
-            ,"solve_zzulioj": nowStudent.solve_zzulioj
-            ,"solve_codeforces": nowStudent.solve_codeforces
-            ,"rating_codeforces": nowStudent.rating_codeforces
-            ,"solve_nowcoder": nowStudent.solve_nowcoder
-            ,"solve_nyoj": nowStudent.solve_nyoj
-            ,"solve_fuquanoj": nowStudent.solve_fuquan
-            ,"solve_luogu": nowStudent.solve_luogu
-            ,"solve_vjudge": nowStudent.solve_vjudge
-            ,"solve_jzoj": nowStudent.solve_jzoj
-            ,"totSolve": nowStudent.tot_solve
-            ,"fakeName": row[14]
+            , "name": nowStudent.name
+            , "solve_zzulioj": nowStudent.solve_zzulioj
+            , "solve_codeforces": nowStudent.solve_codeforces
+            , "rating_codeforces": nowStudent.rating_codeforces
+            , "extra_codeforces": nowStudent.extra_codeforces
+            , "solve_nowcoder": nowStudent.solve_nowcoder
+            , "solve_nyoj": nowStudent.solve_nyoj
+            , "solve_fuquanoj": nowStudent.solve_fuquan
+            , "solve_luogu": nowStudent.solve_luogu
+            , "solve_vjudge": nowStudent.solve_vjudge
+            , "solve_jzoj": nowStudent.solve_jzoj
+            , "totSolve": nowStudent.tot_solve
+            , "fakeName": row[14]
         })
-        # nowStudent.solve_zzulioj = zzuiloj.get_solve_num('abmcar')
         studentList.append(nowStudent)
-        print (json.dumps(now_json, sort_keys=True, indent=2))
-        # print(studentList[len(studentList) - 1].tot_solve)
-        # print(studentList[len(studentList) - 1].rating_codeforces)
+        print(json.dumps(now_json, sort_keys=True, indent=2))
     f = open(file="data.json", mode='w')
     f.write(json.dumps(now_json, sort_keys=True, indent=2))
