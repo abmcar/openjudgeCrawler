@@ -24,6 +24,7 @@ class Student:
         self.name_jzoj = None
         self.solve_jzoj = 0
         self.extra_codeforces = 0
+        self.fake_name = None
 
     def set_solve_zzulioj(self):
         if self.name_zzulioj is not None:

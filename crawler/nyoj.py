@@ -42,6 +42,5 @@ def get_solve_num(uid):
     items = parse_result(html)  # 解析过滤我们想要的信息
     return int(items)
 
-
 # if __name__ == '__main__':
 #     print(get_solve_num('Abmcar'))

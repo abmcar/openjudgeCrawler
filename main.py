@@ -21,6 +21,7 @@ if __name__ == '__main__':
     for row in results:
         print(row)
         nowStudent = student.Student(row[0], row[1])
+        nowStudent.fake_name = row[14]
 
         nowStudent.name_zzulioj = row[9]
         nowStudent.set_solve_zzulioj()
@@ -121,7 +122,7 @@ if __name__ == '__main__':
             , "solve_vjudge": nowStudent.solve_vjudge
             , "solve_jzoj": nowStudent.solve_jzoj
             , "totSolve": nowStudent.tot_solve
-            , "fakeName": row[14]
+            , "fakeName": nowStudent.fake_name
         })
         studentList.append(nowStudent)
         print(json.dumps(now_json, sort_keys=True, indent=2))
