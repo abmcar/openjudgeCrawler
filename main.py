@@ -62,7 +62,7 @@ if __name__ == '__main__':
         db.commit()
 
         nowStudent.name_fuquan = row[12]
-        # nowStudent.set_solve_fuquan()
+        nowStudent.set_solve_fuquan()
         sql_update = 'update ranking set solve_fuquan=\'' + str(nowStudent.solve_fuquan) + '\' where sno=\'' + str(
             nowStudent.sno) + '\''
         print(sql_update)
@@ -88,6 +88,22 @@ if __name__ == '__main__':
         nowStudent.name_jzoj = row[19]
         nowStudent.set_solve_jzoj()
         sql_update = 'update ranking set solve_jzoj=\'' + str(nowStudent.solve_jzoj) + '\' where sno=\'' + str(
+            nowStudent.sno) + '\''
+        print(sql_update)
+        cursor.execute(sql_update)
+        db.commit()
+
+        nowStudent.name_hduoj = row[22]
+        nowStudent.set_solve_hduoj()
+        sql_update = 'update ranking set solve_hduoj=\'' + str(nowStudent.solve_hduoj) + '\' where sno=\'' + str(
+            nowStudent.sno) + '\''
+        print(sql_update)
+        cursor.execute(sql_update)
+        db.commit()
+
+        nowStudent.name_poj = row[23]
+        nowStudent.set_solve_poj()
+        sql_update = 'update ranking set solve_poj=\'' + str(nowStudent.solve_poj) + '\' where sno=\'' + str(
             nowStudent.sno) + '\''
         print(sql_update)
         cursor.execute(sql_update)
@@ -121,6 +137,8 @@ if __name__ == '__main__':
             , "solve_luogu": nowStudent.solve_luogu
             , "solve_vjudge": nowStudent.solve_vjudge
             , "solve_jzoj": nowStudent.solve_jzoj
+            , "solve_poj": nowStudent.solve_poj
+            , "solve_hduoj": nowStudent.solve_hduoj
             , "totSolve": nowStudent.tot_solve
             , "fakeName": nowStudent.fake_name
         })

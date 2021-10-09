@@ -6,6 +6,8 @@ from crawler import nyoj
 from crawler import luogu
 from crawler import vjudge
 from crawler import jzoj
+from crawler import hduoj
+from crawler import poj
 
 
 def get_zzulioj_solve(uid):
@@ -42,3 +44,11 @@ def get_vjudge_solve(uid):
 
 def get_jzoj_solve(uid):
     return jzoj.get_solve_num(uid)
+
+
+def get_hduoj_solve(uid):
+    return hduoj.get_solve_num(uid)
+
+
+def get_poj_solve(uid):
+    return poj.get_solve_num(uid)
